@@ -1,7 +1,7 @@
 
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
         if (isMobile) 
-        { document.body.style.backgroundSize=4000+'px'; }
+        { document.body.style.backgroundSize=4500+'px'; }
            
         else 
         {document.body.style.backgroundSize=1200+'px';}
