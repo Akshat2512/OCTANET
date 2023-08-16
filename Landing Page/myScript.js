@@ -1,4 +1,13 @@
 
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        if (isMobile) 
+        { document.body.style.backgroundSize=4000+'px'; }
+           
+        else 
+        {document.body.style.backgroundSize=1200+'px';}
+  
+
+
 let video = document.getElementById("video1");
 let video2 = document.getElementById("video2");
 
