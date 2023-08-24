@@ -1,0 +1,514 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    
+    width: 100%;
+    background: #0c111b;
+    position: relative;
+    font-family: roboto, sans-serif;
+}
+
+.navbar{
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -4px;
+    z-index: 9;
+    align-items: center;
+    background-image: linear-gradient(to right, rgb(0, 0, 0), rgba(255, 255, 255, 0) );
+}
+
+.brand-logo{
+    height: 70px;
+    transform: scale(0.6);
+    margin-left: 10px;
+}
+.premium{
+    color: rgba(255, 231, 20, 0.919);
+    font-weight:50;
+    font-size: 13px;
+    border-radius: 20px;
+    background-color: rgba(219, 184, 11, 0.328);
+    width:90px;
+    padding: 4 10px;
+    margin-left: 10px;
+}
+.nav-links{
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    list-style:none;
+    width: 100px;
+   
+}
+
+.nav-items a{
+    text-decoration: none;
+    margin-left:20px;
+    text-transform: capitalize;
+    color: #fff;
+   
+}
+.nav-items{
+    padding: 20px;
+    width: 100px;
+    position: relative;
+
+    opacity: 0.5;
+}
+.nav-items div{
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    opacity:0;
+    width:auto;
+    padding: 20px;
+   
+    white-space: nowrap;
+
+}
+
+.nav-links:hover div div{
+   opacity:1;
+   transition: 0.5s;
+   padding-left:70px;
+   width: 180px;
+   color:#ffffff
+}
+
+.nav-items:hover{
+    width:80px;
+    transition: .2s;
+    transform: scale(1.1);
+    margin-left:10px;
+    opacity: 1;
+
+    
+}
+.nav-items div:hover{
+    
+    transition: .2s;
+    transform: scale(1.1);
+    margin-left:10px;
+    opacity: 1;
+    color:#5d5959;
+}
+
+
+.nav-links:hover {
+    width: 500px;
+    transition: 2s;
+}
+.nav-links:not(:hover){
+    transition: 2s;
+}
+
+
+.video-background{
+        position: fixed;
+   
+        top: -70px;
+        overflow: hidden;
+        height: 680px;
+        width: 1470px
+      
+}
+.video-background video {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    transform: scaleY(1)
+  }
+
+.main 
+{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    margin-top: 200px;
+    background-image: linear-gradient(to top, rgb(14, 12, 29) 85%, rgba(255, 255, 255, 0) );
+}
+
+
+.video-name{
+   
+    margin-left: 150px;
+    color:rgb(230, 221, 221);
+    
+}
+.video-name i{
+    transform:scale(0.5);
+ }
+
+.video-name span:nth-of-type(4)
+{
+  background-color: #5d59597a;
+  border-radius: 4px;
+  padding:2px 6px 
+}
+.video-name span:nth-of-type(5)
+{
+    color:#b1aeae
+}
+.video-name span:nth-of-type(7)
+{
+    background-color: #5d59597a;
+    color: white;
+    border-radius: 7px;
+    padding:14px 100px ;
+    font-weight: bolder;
+    font-size:18;
+}
+.video-name span:nth-of-type(8)
+{
+    background-color: #5d59597a;
+    border-radius: 7px;
+    padding:13px 17px ;
+    color: white;
+    font-size:22;
+}
+.video-name span:nth-of-type(7):hover,.video-name span:nth-of-type(8):hover
+{
+    background-color: #908c8cce ;
+    transition: 1s;
+}
+
+.vidcontainer{
+    margin-top: 200px;
+    padding: 90px 0px 100px 0px;
+}
+
+.video-card-container{
+    position: relative;
+    width: 92%;
+    margin: 100px 100px;
+    height: 10vw;
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+
+}
+
+.video-card{
+    position: relative;
+    min-width: calc(100%/5 - 10px);
+    width: calc(100%/5 - 10px);
+    height: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #030b17;
+}
+
+.video-card-image,
+.card-video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-video{
+    position: absolute;
+}
+
+.video-card:hover .video-card-image{
+    display: none;
+}
+
+.video-card:hover{
+    transform: scale(1.2);
+    z-index: 12;
+    transition: .5s;
+}
+.title{
+    color: #fff;
+    opacity: 0.9;
+    padding-left: 4%;
+    text-transform: capitalize;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.movies-list1{
+    width: 50%;
+    height: 120px;
+    position: absolute;
+    margin: 0px 750px 100px;
+    top: 238px;
+    transform: scale(0.7);
+}
+
+.movies-list1 .card-container .card{
+    position: relative;
+    min-width: 150px;
+    width: 150px;
+    height: 80px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right: 10px;
+    transition: .5s;
+}
+
+.movies-list1 .pre-btn, .movies-list1 .nxt-btn{
+    position: absolute;
+    top: 60px;
+    width: 5%;
+    height: 100px;
+    z-index: 2;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+.movies-list1 .pre-btn{
+    left:20;
+}
+.movies-list1 .nxt-btn{
+    right:20;
+}
+
+.movies-list{
+    width: 90%;
+    height: 120px;
+    position: relative;
+    margin: 10px 80px 100px;
+    top: 60px;
+   
+}
+
+
+
+.card-container{
+    position: relative;
+    width: 92%;
+    padding-left: 10px;
+    height: 220px;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+
+.card-container::-webkit-scrollbar{
+    display: none;
+}
+
+.card{
+    position: relative;
+    min-width: 150px;
+    width: 150px;
+    height: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right: 10px;
+    transition: .5s;
+ 
+}
+
+.card-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+ 
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+.card:hover .card-body{
+    opacity: 1;
+}
+
+.card-body{
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: linear-gradient(to bottom, rgba(4, 8, 15, 0), #192133 90%);
+    padding: 10px;
+    transition: 0.5s;
+}
+
+.name{
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-top: 60%;
+}
+
+.des{
+    color: #fff;
+    opacity: 0.8;
+    margin: 5px 0;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.watchlist-btn{
+    position: relative;
+    width: 100%;
+    text-transform: capitalize;
+    background: none;
+    border: none;
+    font-weight: 500;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 5px 0;
+    cursor: pointer;
+    padding: 10px 5px;
+    border-radius: 5px;
+}
+
+.watchlist-btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -5px;
+    height: 35px;
+    width: 35px;
+    background-image: url(images/add.png);
+    background-size: cover;
+    transform: scale(0.4);
+}
+
+.watchlist-btn:hover{
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+.movies-list .pre-btn, .movies-list .nxt-btn{
+    position: absolute;
+    top: 36px;
+    width: 5%;
+    height: 100%;
+    z-index: 2;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 100px 10px; 
+}
+
+.pre-btn{
+    left: 30;
+    background: linear-gradient(to right, #0c111b 20%, #0c111b00);
+}
+
+.nxt-btn{
+    right: 30;
+    background: linear-gradient(to left, #0c111b 20%, #0c111b00);
+}
+
+.pre-btn img,
+.nxt-btn img{
+    width: 15px;
+    height: 20px;
+    opacity: 1;
+}
+
+.pre-btn:hover img,
+.nxt-btn:hover img{
+    opacity: 1;
+}
+
+.movies-list2{
+    width: 90%;
+    height: 120px;
+    position: relative;
+    margin: 0px 80px 100px;
+    top: 140px;
+   
+}
+.movies-list2 .pre-btn, .movies-list2 .nxt-btn{
+    position: absolute;
+    top: 36px;
+    width: 5%;
+    height: 100%;
+    z-index: 2;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 100px 10px; 
+}
+.movies-list2 .card-container .card{
+    position: relative;
+    min-width: 250px;
+    width: 250px;
+    height: 150px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right: 10px;
+    transition: .5s;
+}
+
+
+#ct
+{   
+    position: relative;
+    width:100%;
+    height:100px;
+    left:-50px;
+}
+footer
+{
+    position: relative;
+    width:100%;
+    height: 350px;
+    justify-content: space-between;
+  
+    display: flex;
+   
+    background-color:#000000;
+    margin-left: 50px;
+    padding:150px 200px 
+ 
+    
+}
+
+span{
+  color: white
+}
+
+footer a:visited{
+    color:#9e9c9b00;
+    font-size:xx-small;
+}
+footer img
+{
+    height:55px;
+    width:140px;
+    padding:8px 7px;
+    margin-left: 0px;
+    background-position-y: center ;
+    border-radius: 50px;
+}
+footer h4{
+    
+    text-align: left;
+    color:rgb(238, 237, 237);
+}
+footer h4:nth-of-type(2){
+    position:absolute;
+    left: 450px
+}
+#lg i{
+        padding: 10px ;
+        margin-right: 20px;
+        margin-top: 50px;
+        font-size: 23px;
+        font-weight: 500;
+        color:rgb(242, 242, 242);
+
+}
+
+a{
+    text-decoration: none;
+}
