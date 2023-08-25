@@ -1,4 +1,9 @@
 
+
+var links = document.getElementsByClassName('nav-links')[0];
+links.addEventListener('mouseover',()=>{document.getElementsByClassName('navbar')[0].style.width='500px'});
+links.addEventListener('mouseleave',()=>{document.getElementsByClassName('navbar')[0].style.width='100px'});
+
 var cardsContainers = document.querySelectorAll('.card-container');
 var images1 = "";
    for(let i=0; i<8;i++)
@@ -38,7 +43,7 @@ for(let i=0; i<12;i++)
      <h2 class="name">movie name</h2>
      <h6 class="des">Movie Description</h6>
      <button class="watchlist-btn">add to watchlist</button>
- </div>
+      </div>
      </div>
      `;
     }
