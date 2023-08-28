@@ -1,8 +1,8 @@
 
 
-var links = document.getElementsByClassName('nav-links')[0];
+var links = document.getElementsByClassName('navlink')[0];
 links.addEventListener('mouseover',()=>{document.getElementsByClassName('navbar')[0].style.width='500px'});
-links.addEventListener('mouseleave',()=>{document.getElementsByClassName('navbar')[0].style.width='100px'});
+links.addEventListener('mouseleave',()=>{document.getElementsByClassName('navbar')[0].style.width='100px';});
 
 var cardsContainers = document.querySelectorAll('.card-container');
 var images1 = "";
