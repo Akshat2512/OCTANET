@@ -21,12 +21,17 @@ observer.observe(video);
 observer.observe(video2);
 
 
+
 let height=400;
 let width=0;
 var frame1 = document.getElementById('frame1');
 
 var frame2 = document.getElementById('frame2');
 var button = document.getElementById('bue');
+
+var trl = document.getElementById('top').querySelector('h2');
+frame1.addEventListener('mouseover',() => {trl.style.opacity='0';})
+frame1.addEventListener('mouseleave',() => {trl.style.opacity='1';})
 
 frame1.addEventListener('load',() => {
 
