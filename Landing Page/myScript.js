@@ -1,146 +1,137 @@
 
-const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        if (isMobile) 
-        { document.body.style.backgroundSize=4500+'px'; }
-           
-        else 
-        {document.body.style.backgroundSize=1200+'px';}
-  
+ 
+    var slide = $('.container-2 .row-2 > div');
+    var img = slide.eq(0).find('.item');
+
+    var i=1;
+    var x = 400;
+
+    var btn = slide.eq(1).find('button');
+    var k = 0;
 
 
-let video = document.getElementById("video1");
-let video2 = document.getElementById("video2");
+    //caruosel-indicator 
+  function slider(){
+ 
+    var img = slide.find('.item');
+   
+    [...img].forEach(e => {
+          e.style.transform = `translateX(${0}px)`
+    })
+    setTimeout(()=>{
+        [...img].forEach(e => {
+            e.style.transform = `translateX(-${x}px)`
+      })
 
-let observer = new IntersectionObserver(function(entries) {  // for auto playing video as video comes inside the view port
-  if (entries[0].isIntersecting === true) {
-    video.play();
-    video2.play();
-  } 
-}, { threshold: [0.8] });
-observer.observe(video);
-observer.observe(video2);
+         slide[0].innerHTML = img[i+1].outerHTML+img[i+2].outerHTML+img[i+0].outerHTML+img[i+1].outerHTML;
 
+          }, 1000);
 
-
-let height=400;
-let width=0;
-var frame1 = document.getElementById('frame1');
-
-var frame2 = document.getElementById('frame2');
-var button = document.getElementById('bue');
-
-var trl = document.getElementById('top').querySelector('h2');
-frame1.addEventListener('mouseover',() => {trl.style.opacity='0';})
-frame1.addEventListener('mouseleave',() => {trl.style.opacity='1';})
-
-frame1.addEventListener('load',() => {
-
-var img=frame1.contentDocument.getElementsByClassName('poly');
-for(let i=0;i<13;i++)
-{   var flag=0;
-    img[i].addEventListener('click', ()=> {
-        width=0;
-        height=400;
+    [...btn].forEach(e =>{
+        e.innerHTML = `<img src='Assets/2.svg'>`
+    })
+    k++;
+    btn.eq(k).find('img').attr('src', 'Assets/1.svg');
     
-        frame2.style.width = 0+'px';
-        frame2.style.height = 400+'px';
-        moveframeright();
-        frame1.style.borderTopRightRadius= 0+'px';
-        frame1.style.borderBottomRightRadius= 0+'px';
-        frame2.style.borderBottomLeftRadius= 0+'px';
-        });   
-       
+    if(k==2)
+     k=-1;
+  }
+
+var start = setInterval(slider, 2000);
+   
+slide[0].addEventListener('mouseover', ()=>{
+ clearInterval(start);
+})
+
+slide[0].addEventListener('mouseout', ()=>{
+     start = setInterval(slider, 2000);
+ })
+
+
+//container-2
+var c2 = $('.container-2 .row-2 .item'); 
+[...c2].forEach(e=>{
+    e.innerHTML = e.innerHTML + `<div class="carousel-caption">
+                        <div><img src="Assets/icon.svg" alt="..."></div>
+                        <div>WEB DEVELOPMENT</div>
+                        <p>Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque</p>
+                        <button type="button" onclick='window.location.href="https://fylehq.com"' >Read More &nbsp&nbsp <img src='Assets/arrow.svg'> </button>
+                    </div>`
+})
+
+
+//container-3
+var c3 = $('.container-3 .card-items-1 .row-2 .item');
+[...c3].forEach(e=>{
+    e.onclick=()=>{
+        [...c3].forEach( e => {
+            e.style.cssText = 'background-color: #F6F6F6; color: black';
+
+        })
+        e.style.cssText = 'background-color: rgb(255, 49, 71); color: white';
+        $('.container-3 .card-items-1 img')[0].src=`Assets/image@${e.dataset.item}.png`;
+    }
+})
+
+
+
+var ip = $('.contact-form .grid-container input');
+var lb = $('.contact-form .grid-container label');
+
+function label_in(e){
+    if (e.target.value.length == 0){
+        var lb_val=e.target.dataset.value;
+        lb[lb_val].style.cssText = 'transform: translateY(0px) Scale(1)';
+        lb[lb_val].innerHTML =  lb[lb_val].innerHTML.replace("*","");
+        lb[lb_val].innerHTML =  lb[lb_val].innerHTML+"*";
+      }
+    }
+function label_out(e){
+    var lb_val=e.dataset.value;
+    lb[lb_val].style.cssText = `transform: translateY(-20px)  Scale(0.9);`;
+    lb[lb_val].innerHTML =  lb[lb_val].innerHTML.replace("*","");
 }
 
-document.addEventListener("mouseover", function(event) {
-  
-  if (event.target!=ifr2) {
-
-    moveframeleft();
-     
-     }
-     
-    } );
-  
-
-});
+[...ip].forEach(element => {
+    element.onclick = ()=>{
+      label_out(element)
+      element.removeEventListener('focusout', label_in)
+      element.addEventListener('focusout', label_in)
+    }
+})
 
 
-    var k,y;
-    function moveframeright()
-     {
-       clearInterval(y);
-        clearInterval(k);
-        k=setInterval(myfunction,20);
-
-         function myfunction(){
-            width=width+10;
-           frame2.style.width = width+'px';
-           
-       
-           if(width>=500)
-           {
-               clearInterval(k);
-               moveframedown();
-               frame2.style.borderBottomLeftRadius= 20+'px';
-           }
-          }
-        
-          
-     }
-
-
-    
-     function moveframeleft()
-     { 
-      clearInterval(y);
-      clearInterval(k);
-      k=setInterval(myfunctionup,20);
-
-      function myfunctionup(){
-         height=height-10;
-        frame2.style.height = height +'px';
-        
-        if(height<=400)
-        {
-            clearInterval(k);
-            
-        }}
-
-        y=setInterval(myfunctionleft,20)
-
-       function myfunctionleft()
-       {
-        width=width-10;
-        frame2.style.width = width +'px';
-        
-        if(width<=0)
-        {
-            clearInterval(y);
-            frame1.style.borderTopRightRadius= 20+'px';
-            frame1.style.borderBottomRightRadius= 20+'px';
+function clear_form(){
+    [...ip].forEach(e => {
+        if (e.value.length != 0){
+        var lb_val=e.dataset.value;
+        lb[lb_val].style.cssText = 'transform: translateY(0px) Scale(1)';
+        lb[lb_val].innerHTML =  lb[lb_val].innerHTML.replace("*","");
+        lb[lb_val].innerHTML =  lb[lb_val].innerHTML+"*";
         }
+    });
 
-       }
-      }
-        
+    [...form.find('input[type="text"], input[type="email"]')].forEach(e=>{
+                e.value="";
+             })
+    form.find('input[type="checkbox"]')[0].checked = false;
+}
 
-     function moveframedown()
-     {   clearInterval(y);
-        clearInterval(k);
-        k=setInterval(myfunction,20);
 
-         function myfunction(){
-            height=height+10;
-           frame2.style.height = height+'px';
-           
-           console.log('hello world');
-           if(height>=700)
-           {
-               clearInterval(k);
-          
-             
-           }
-          }
-        
-     } 
+
+
+var cnt = $('.container-1 .elem-1 button');
+var form = $('.contact-form');
+
+cnt[0].onclick = ()=>{
+     form[0].style.display=`flex`;
+     document.documentElement.style.overflow='hidden';
+}
+var close_form = $('.contact-form > :nth-child(3)');
+close_form[0].onclick = () => {
+    form[0].style.display=`none`;
+    document.documentElement.style.overflow='auto';
+    clear_form();
+}
+
+   

@@ -32,10 +32,9 @@
        var table = document.getElementById('section2').innerHTML;
        var t = `<div id ='${i}' class='tasks'>
      <br> <span id='sp1'>#${tnm}</span> <br> <span id='sp2'>Deadline: ${dl}</span> <span id='sp3'>Priority: ${pri}</span> <span id='sp4'>Label: ${labv}</span><span id='sp5'>${lab}</span> <span id='st'><span id='dte'></span></span><br>
-      <br><div>${des}</div><span id='bt'><button id = 'comp' onclick='completeTasks(${i})'>Completed</button><button id='del' onclick='deleteTasks(${i})'>Delete</button></span>
+      <br><textarea style="width: 100%; height: 40px;">${des}</textarea><span id='bt'><button id = 'comp' onclick='completeTasks(${i})'>Completed</button><button id='del' onclick='deleteTasks(${i})'>Delete</button></span>
       </div>`;
-    
-      
+     
      
       table = t + table;
       document.getElementById('section2').innerHTML=table;
@@ -98,7 +97,7 @@
       if(k[j][1]==1)
       { 
       x[j].style.backgroundColor='yellowgreen';
-      x[j].querySelector('div').style.backgroundColor='azure';
+      x[j].querySelector('textarea').style.backgroundColor='azure';
       x[j].querySelector('#comp').disabled = true;
       }
       console.log(k[j][1])
@@ -108,6 +107,33 @@
   
   
   }
+
+function tarea()
+{
+  var t = document.querySelectorAll('.tasks');
+ 
+  t.forEach(element => {
+       element.querySelector('textarea').addEventListener('keyup',()=>{
+          var i=0;
+          if(i==0)
+         { var y = setInterval(()=>{
+          i++;
+          console.log(i)
+          if(i==6)
+          {
+            taskprogress();
+            clearInterval(y)
+          }
+          else if(i>6)
+          {
+            clearInterval(y)
+          }
+          },500)
+        }
+       });
+  });
+
+}
 
   function storeData()
   {
@@ -189,7 +215,7 @@
     undo.push(document.getElementById('section2').innerHTML);
     var x=document.getElementById(e);
       x.style.backgroundColor='yellowgreen';
-      x.querySelector('div').style.backgroundColor='azure';
+      x.querySelector('textarea').style.backgroundColor='azure';
       x.querySelector('#st').innerHTML=x.querySelector('#dte').innerHTML;
 
 
@@ -259,10 +285,10 @@
           k++;
       },10 )
       
-   }
-  
+   };
     storeData();
     LoadData();
+    tarea();
   }
 
   function callundo()
