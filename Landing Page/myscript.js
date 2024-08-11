@@ -28,7 +28,7 @@
           }, 1000);
 
     [...btn].forEach(e =>{
-        e.innerHTML = `<img src='Assets/2.svg'>`
+        e.innerHTML = `<img src='Assets/2.svg' loading="lazy">`
     })
     k++;
     btn.eq(k).find('img').attr('src', 'Assets/1.svg');
