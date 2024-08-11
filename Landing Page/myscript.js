@@ -28,7 +28,7 @@
           }, 1000);
 
     [...btn].forEach(e =>{
-        e.innerHTML = `<img src='Assets/2.svg' loading="lazy">`
+        e.innerHTML = `<img src='Assets/2.svg' alt='...' loading="lazy">`
     })
     k++;
     btn.eq(k).find('img').attr('src', 'Assets/1.svg');
@@ -52,10 +52,10 @@ slide[0].addEventListener('mouseout', ()=>{
 var c2 = $('.container-2 .row-2 .item'); 
 [...c2].forEach(e=>{
     e.innerHTML = e.innerHTML + `<div class="carousel-caption">
-                        <div><img src="Assets/icon.svg" alt="..."></div>
+                        <div><img src="Assets/icon.svg" loading="lazy" alt="..."></div>
                         <div>WEB DEVELOPMENT</div>
                         <p>Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque</p>
-                        <button type="button" onclick='window.location.href="https://fylehq.com"' >Read More &nbsp&nbsp <img src='Assets/arrow.svg'> </button>
+                        <button type="button" onclick='window.location.href="https://fylehq.com"' >Read More &nbsp&nbsp <img src='Assets/arrow.svg' loading="lazy" alt="..."> </button>
                     </div>`
 })
 
