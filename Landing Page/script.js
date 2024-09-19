@@ -37,7 +37,6 @@ img_cards.forEach(e=>{
 
 
 var content = '';
-
 fetch('https://cdn.shopify.com/s/files/1/0564/3685/0790/files/singleProduct.json?v=1701948448')
 .then(response => response.text())
 .then((data) => {
