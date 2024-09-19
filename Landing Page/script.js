@@ -11,7 +11,7 @@ var arr = [  '81Sp+ssSL._SY741_.jpg',
 
 var i=0;
 arr.forEach(e=>{
-   s = s + `<img src = "images/${e}" data-value=${i}>`;
+   s = s + `<img src = "images/${e}" data-value=${i} alt="not found!!">`;
    i = i+1;
 })
 
@@ -66,7 +66,7 @@ fetch('https://cdn.shopify.com/s/files/1/0564/3685/0790/files/singleProduct.json
                   values.forEach(e=>{
                     str = str + e;
                   })
-                  sz = sz + `<span><input class='radio' type = 'radio' name='size' value='${str}'/><label>${str}</label></span>`;
+                  sz = sz + `<span><input id='radio-${str}' class='radio' type = 'radio' name='size' value='${str}'/><label for="radio-${str}">${str}</label></span>`;
                   
                });
                  
