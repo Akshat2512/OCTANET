@@ -3,7 +3,11 @@
 var cards = document.getElementById('cards');
 var c = document.getElementsByClassName('content')[0];
 var s = '';
-var arr = ['81Sp+ssmiSL._SY741_(1).jpg', '81dk+-FgCNL._SY741_.jpg', '81Sp+ssmiSL._SY741_.jpg','91wBYH2ydbL._SY741_.jpg','61M+P4fxmoL._SX679_.jpg']
+var arr = [  '81Sp+ssSL._SY741_.jpg', 
+             '81dk+-FgCNL._SY741_.jpg',
+             '81Sp+ssmiSL._SY741_.jpg',
+             '91wBYH2ydbL._SY741_.jpg',
+             '61M+P4fxmoL._SX679_.jpg'  ]
 
 var i=0;
 arr.forEach(e=>{
