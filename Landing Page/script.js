@@ -3,11 +3,11 @@
 var cards = document.getElementById('cards');
 var c = document.getElementsByClassName('content')[0];
 var s = '';
-var arr = ['https://m.media-amazon.com/images/I/81dszCJ0etL._SY741_.jpg', 'https://m.media-amazon.com/images/I/81dk+-FgCNL._SY741_.jpg', 'https://m.media-amazon.com/images/I/81z+aTko9qL._SY741_.jpg','https://m.media-amazon.com/images/I/81Sp+ssmiSL._SY741_.jpg','https://m.media-amazon.com/images/I/91wBYH2ydbL._SY741_.jpg','https://m.media-amazon.com/images/I/61M+P4fxmoL._SX679_.jpg']
+var arr = ['81Sp+ssmiSL._SY741_(1).jpg', '81dk+-FgCNL._SY741_.jpg', '81Sp+ssmiSL._SY741_.jpg','91wBYH2ydbL._SY741_.jpg','61M+P4fxmoL._SX679_.jpg']
 
 var i=0;
 arr.forEach(e=>{
-   s = s + `<img src = ${e} data-value=${i}>`;
+   s = s + `<img src = "images/${e}" data-value=${i}>`;
    i = i+1;
 })
 
@@ -16,7 +16,7 @@ var img_cards = cards.querySelectorAll('img');
 
 img_cards[0].style.cssText= `border:2px solid rgb(66, 26, 116);
                              transform: scale(1.1)`;
-document.querySelector('.container img').src = arr[img_cards[0].dataset.value]
+document.querySelector('.container img').src = "images/"+arr[img_cards[0].dataset.value]
 
 img_cards.forEach(e=>{
    e.onclick = ()=>{
@@ -26,8 +26,8 @@ img_cards.forEach(e=>{
 
       })
       e.style.cssText= `border:2px solid rgb(66, 26, 116);
-                             transform: scale(1.1)`;
-      document.querySelector('.container img').src = arr[e.dataset.value]
+                        transform: scale(1.1)  `;
+      document.querySelector('.container img').src = "images/"+arr[e.dataset.value]
    }
 })                             
 
