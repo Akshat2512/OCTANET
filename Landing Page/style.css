@@ -192,16 +192,16 @@ a:active {
 
 
 .content :nth-child(9){
-  display:inline;
+  display:inline-flex;
   background-color: rgba(109, 122, 131, 0.314);
   border-radius: 19px;
-  width: 100px;
   color: rgba(21, 33, 100, 0.804);
   padding:5px;
+
 }
 
 .content :nth-child(9) span{
-  margin: 50px;
+  margin: 0px 50px 0px 50px;
 }
 
 
@@ -210,7 +210,11 @@ a:active {
   margin-right:10px;
 
 }
+.content a{
+  margin:0px;
+}
 .content button{
+
   border-radius: 30px;
   border: 0px;
   background-color: rgba(21, 33, 100, 0.804);
@@ -218,6 +222,7 @@ a:active {
   padding-left: 50px;
   padding-right: 50px;
   color: white;
+  
 }
 
 .content :nth-child(11){
