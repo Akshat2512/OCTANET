@@ -78,7 +78,7 @@ fetch('https://cdn.shopify.com/s/files/1/0564/3685/0790/files/singleProduct.json
                                 <div>Choose a Size</div>
                                 <div>${sz}</div>
                                 <div><i class="fa-solid fa-minus"></i><span>1</span><i class="fa-solid fa-plus"></i></div>
-                                <a><button><i class="fa-solid fa-bag-shopping"></i><span>Add To Cart</span></button></a>
+                                <a href="#"><button><i class="fa-solid fa-bag-shopping"></i><span>Add To Cart</span></button></a>
                                 <div></div>
                                 <div>${p.description}</div>
                                 `;
